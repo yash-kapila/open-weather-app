@@ -7,12 +7,6 @@
     'use strict';
 
     angular.module('app').constant('DetailsTemplate', {
-        'backBtn': 'Go Back',
-        'tableHeading': {
-            'day': 'Day',
-            'seaLevel': 'Sea Level(hPa)',
-            'weather': 'Weather'
-        },
         'loadingMessage': 'Loading Data'
     })
 })();

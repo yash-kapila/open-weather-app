@@ -68,7 +68,7 @@ body {
 
 .details-container .details-header {
     color: #FFFFFF;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 .details-container .details-main {
@@ -82,6 +82,7 @@ body {
 
 .details-container .data-retrieving-container {
     color: #FFFFFF;
+    margin-top: 20%;
 }
 
 .details-container .data-retrieving-container .data-retrieving-message {

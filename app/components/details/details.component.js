@@ -25,6 +25,7 @@
             vm.template = DetailsTemplate;
             vm.forecastList = [];
             vm.cityName = '';
+            vm.countryCode = '';
             vm.isDataLoaded = false;
             vm.getSeaLevelData($routeParams.id);
         };
@@ -33,9 +34,12 @@
             dataService.getSeaLevelData(id).then(function (response) {
                 vm.forecastList = appService.getHours(response.data.list);
                 vm.cityName = response.data.city.name;
+                vm.countryCode = response.data.city.country;
                 vm.filterForecastList(vm.forecastList);
+                vm.convertTemperatureToCelsius(vm.forecastList);
             }, function (err) {
                 vm.cityName = '';
+                vm.countryCode = '';
                 vm.forecastList = [];
             })
             .finally(function () {
@@ -45,11 +49,11 @@
         };
 
         vm.filterForecastList = function (list) {
-            var tempList = list.filter(function(el) {
-                return el.dt === "09";
-            });
-            vm.forecastList = tempList;
-            console.log(vm.forecastList);
+            vm.forecastList = appService.filterForecastList(list);
+        };
+
+        vm.convertTemperatureToCelsius = function (list) {
+            vm.forecastList = appService.convertTemperatureToCelsius(list);
         };
 
         vm.goBackToHome = function () {

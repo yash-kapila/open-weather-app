@@ -1,0 +1,40 @@
+<div class="forecast-container" ng-if="$ctrl.forecastList.length !== 0">
+    <table class="col-xs-8 table table-responsive">
+        <thead>
+            <tr>
+                <th class="col-xs-1 text-center">  </th>
+                <th class="col-xs-3 text-center"> {{$ctrl.template.tableHeading.day}} </th>
+                <th class="col-xs-2 text-center"> {{$ctrl.template.tableHeading.seaLevel}} </th>
+                <th class="col-xs-2 text-center"> {{$ctrl.template.tableHeading.maxTemp}} </th>
+                <th class="col-xs-2 text-center"> {{$ctrl.template.tableHeading.minTemp}} </th>
+                <th class="col-xs-2 text-center"> {{$ctrl.template.tableHeading.weather}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in $ctrl.forecastList">
+                <td class="text-center middle">
+                    <span 
+                        class="glyphicon glyphicon-chevron-left back-icon" 
+                        ng-click="$ctrl.goBackToHome()">
+                    </span>
+                </td>
+                <td class="text-center middle">
+                    {{data.dt_txt}}
+                </td>
+                <td class="text-center middle">
+                    {{data.main.sea_level}}
+                </td>
+                <td class="text-center middle">
+                    {{data.main.temp_max}}
+                </td>
+                <td class="text-center middle">
+                    {{data.main.temp_min}}
+                </td>
+                <td class="text-center middle">
+                    <span class="current-weather-description"> {{data.weather[0].main}} </span>
+                    <img ng-src="{{$ctrl.common.baseUrl.image + data.weather[0].icon}}" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

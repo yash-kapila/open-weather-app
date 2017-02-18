@@ -13,7 +13,7 @@
             <tbody class="table-body">
                 <tr ng-repeat="data in $ctrl.weatherData">
                     <td class="table-city-name-container text-center middle">
-                        <span class="city-name"> {{data.name}} </span>
+                        <span class="city-name"> {{data.name}}, {{data.sys.country}} </span>
                     </td>
                     <td class="table-current-weather-container text-center middle">
                         <span class="current-weather-description"> {{data.weather[0].main}} </span>
