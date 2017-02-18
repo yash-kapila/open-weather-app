@@ -1,0 +1,46 @@
+<div class="cities-container">
+    <div ng-if="$ctrl.isDataRetrieving === true" class="cities-data">
+        <table class="table table-responsive">
+            <thead class="table-heading">
+                <tr>
+                    <th class="col-xs-3 text-center"> {{$ctrl.template.tableHeading[0]}} </th>
+                    <th class="col-xs-2 text-center"> {{$ctrl.template.tableHeading[1]}} </th>
+                    <th class="col-xs-3 text-center"> {{$ctrl.template.tableHeading[2]}} </th>
+                    <th class="col-xs-3 text-center"> {{$ctrl.template.tableHeading[3]}} </th>
+                    <th class="col-xs-1 text-center">  </th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr ng-repeat="data in $ctrl.weatherData">
+                    <td class="table-city-name-container text-center middle">
+                        <span class="city-name"> {{data.name}} </span>
+                    </td>
+                    <td class="table-current-weather-container text-center middle">
+                        <span class="current-weather-description"> {{data.weather[0].main}} </span>
+                        <img ng-src="{{$ctrl.common.baseUrl.image + data.weather[0].icon}}" />
+                    </td>
+                    <td class="table-sunrise-container text-center middle">
+                        <span class="sunrise"> {{data.sys.sunrise}} </span>
+                    </td>
+                    <td class="table-sunset-container text-center middle">
+                        <span class="sunset"> {{data.sys.sunset}} </span>
+                    </td>
+                    <td class="table-next-icon-container text-center middle">
+                        <span 
+                            class="glyphicon glyphicon-chevron-right next-icon" 
+                            ng-click="$ctrl.viewSeaLevelDetails(data)">
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-if="$ctrl.isDataRetrieving === false" class="data-retrieving-container text-center">
+        <div class="data-retrieving-message">
+            <h4>
+                {{$ctrl.template.loadingMessage}}
+            </h4>
+        </div>
+    </div>
+</div>

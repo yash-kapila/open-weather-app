@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        
+        <title> Open Weather App </title>
+
+        <!-- Vendor Files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+
+        <!-- App Files -->
+            <!-- Configuration -->
+        <script src="app.js"></script>
+        <script src="app.config.js"></script>
+
+            <!-- Components -->
+        <script src="components/home/home.component.js"></script>
+        <script src="components/cities/cities.component.js"></script>
+        <script src="components/common/spinner/spinner.component.js"></script>
+        <script src="components/details/details.component.js"></script>
+
+            <!-- Constants -->
+        <script src="components/home/template.constant.js"></script>
+        <script src="components/cities/template.constant.js"></script>
+        <script src="components/details/template.constant.js"></script>
+        <script src="services/cities-list.constant.js"></script>
+        <script src="services/common.constant.js"></script>
+
+            <!-- Services -->
+        <script src="services/spinner.service.js"></script>
+        <script src="services/data.service.js"></script>
+        <script src="services/routes.service.js"></script>
+        <script src="services/app.service.js"></script>
+
+        <link rel="stylesheet" href="styles/styles.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <spinner></spinner>
+            <div ng-view></div>
+        </div>
+    </body>
+</html>

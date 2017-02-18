@@ -1,0 +1,14 @@
+<div class="home-container">
+    <header class="row home-header-container text-center">
+        <h1 class="col-xs-12">
+            {{$ctrl.template.heading}}
+        </h1>
+    </header>
+
+    <div class="home-cities-container">
+        <cities
+            list="$ctrl.citiesList"
+            weather-data="$ctrl.citiesWeatherData">
+        </cities>
+    </div>
+</div>
