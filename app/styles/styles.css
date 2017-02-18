@@ -71,10 +71,6 @@ body {
     margin-top: 5%;
 }
 
-.details-container .details-header .details-go-back{
-    margin-top: 2%;
-}
-
 .details-container .details-main {
     margin-top: 5%;
     color: #FFFFFF;
@@ -90,4 +86,8 @@ body {
 
 .details-container .data-retrieving-container .data-retrieving-message {
     padding: 5% 0;
+}
+
+.details-container .details-main .details-main-table-container .back-icon {
+    cursor: pointer;
 }

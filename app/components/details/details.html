@@ -1,16 +1,10 @@
 <div class="details-container">
     <div class="details-data-available-container" ng-if="$ctrl.isDataLoaded === true">
-        <header class="details-header clearfix">
-            <div class="details-city-name pull-left">
+        <header class="details-header">
+            <div class="details-city-name">
                 <h1>
                     {{$ctrl.cityName}}
                 </h1>
-            </div>
-            <div class="details-go-back pull-right">
-                <button class="btn btn-primary" ng-click="$ctrl.goBackToHome()">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span> {{$ctrl.template.backBtn}} </span>
-                </button>
             </div>
         </header>
         
@@ -19,13 +13,20 @@
                 <table class="col-xs-8 table table-responsive">
                     <thead>
                         <tr>
+                            <th class="col-xs-1 text-center">  </th>
                             <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.day}} </th>
-                            <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.seaLevel}} </th>
+                            <th class="col-xs-3 text-center"> {{$ctrl.template.tableHeading.seaLevel}} </th>
                             <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.weather}} </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="data in $ctrl.forecastList">
+                            <td class="text-center middle">
+                                <span 
+                                    class="glyphicon glyphicon-chevron-left back-icon" 
+                                    ng-click="$ctrl.goBackToHome()">
+                                </span>
+                            </td>
                             <td class="text-center middle">
                                 {{data.dt_txt}}
                             </td>
