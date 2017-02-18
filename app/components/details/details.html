@@ -1,43 +1,53 @@
 <div class="details-container">
-    <header class="details-header clearfix">
-        <div class="details-city-name pull-left">
-            <h1>
-                {{$ctrl.cityName}}
-            </h1>
+    <div class="details-data-available-container" ng-if="$ctrl.isDataLoaded === true">
+        <header class="details-header clearfix">
+            <div class="details-city-name pull-left">
+                <h1>
+                    {{$ctrl.cityName}}
+                </h1>
+            </div>
+            <div class="details-go-back pull-right">
+                <button class="btn btn-primary" ng-click="$ctrl.goBackToHome()">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span> {{$ctrl.template.backBtn}} </span>
+                </button>
+            </div>
+        </header>
+        
+        <main class="details-main">
+            <div class="details-main-table-container">
+                <table class="col-xs-8 table table-responsive">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.day}} </th>
+                            <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.seaLevel}} </th>
+                            <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.weather}} </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in $ctrl.forecastList">
+                            <td class="text-center middle">
+                                {{data.dt_txt}}
+                            </td>
+                            <td class="text-center middle">
+                                {{data.main.sea_level}}
+                            </td>
+                            <td class="text-center middle">
+                                <span class="current-weather-description"> {{data.weather[0].main}} </span>
+                                <img ng-src="{{$ctrl.common.baseUrl.image + data.weather[0].icon}}" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div ng-if="$ctrl.isDataLoaded === false" class="data-retrieving-container text-center">
+        <div class="data-retrieving-message">
+            <h4>
+                {{$ctrl.template.loadingMessage}}
+            </h4>
         </div>
-        <div class="details-go-back pull-right">
-            <button class="btn btn-primary" ng-click="$ctrl.goBackToHome()">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span> {{$ctrl.template.backBtn}} </span>
-            </button>
-        </div>
-    </header>
-    
-    <main class="details-main">
-        <div class="details-main-table-container">
-            <table class="col-xs-8 table table-responsive">
-                <thead>
-                    <tr>
-                        <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.day}} </th>
-                        <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.seaLevel}} </th>
-                        <th class="col-xs-4 text-center"> {{$ctrl.template.tableHeading.weather}} </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="data in $ctrl.forecastList">
-                        <td class="text-center middle">
-                            {{data.dt_txt}}
-                        </td>
-                        <td class="text-center middle">
-                            {{data.main.sea_level}}
-                        </td>
-                        <td class="text-center middle">
-                            <span class="current-weather-description"> {{data.weather[0].main}} </span>
-                            <img ng-src="{{$ctrl.common.baseUrl.image + data.weather[0].icon}}" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </main>
+    </div>
 </div>

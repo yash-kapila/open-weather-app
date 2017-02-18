@@ -12,6 +12,7 @@
             'day': 'Day',
             'seaLevel': 'Sea Level(hPa)',
             'weather': 'Weather'
-        }
+        },
+        'loadingMessage': 'Loading Data'
     })
 })();

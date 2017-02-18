@@ -25,6 +25,7 @@
             vm.template = DetailsTemplate;
             vm.forecastList = [];
             vm.cityName = '';
+            vm.isDataLoaded = false;
             vm.getSeaLevelData($routeParams.id);
         };
 
@@ -38,6 +39,7 @@
                 vm.forecastList = [];
             })
             .finally(function () {
+                vm.isDataLoaded = true;
                 spinnerService.hideSpinner();
             });
         };

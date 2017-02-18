@@ -83,3 +83,11 @@ body {
 .details-container .details-main .details-main-table-container .middle {
     vertical-align: middle;
 }
+
+.details-container .data-retrieving-container {
+    color: #FFFFFF;
+}
+
+.details-container .data-retrieving-container .data-retrieving-message {
+    padding: 5% 0;
+}
