@@ -18,9 +18,9 @@
 
     angular.module('app').controller('citiesCtrl', CitiesCtrl);
 
-    CitiesCtrl.$inject = ['CitiesTemplate', '$filter', 'Common', 'routeService', 'appService'];
+    CitiesCtrl.$inject = ['CitiesTemplate', 'Common', 'routeService', 'appService'];
 
-    function CitiesCtrl (CitiesTemplate, $filter, Common, routeService, appService) {
+    function CitiesCtrl (CitiesTemplate, Common, routeService, appService) {
 
         var vm = this;
 

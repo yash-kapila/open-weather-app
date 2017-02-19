@@ -18,7 +18,7 @@ module.exports = function(config) {
         './app/**/*.js',
 
         // fixtures
-        {pattern: './tests/json/**/*.json', included: false}        
+        {pattern: './tests/json/*.json', included: false}        
     ],
 
     // list of files to exclude
