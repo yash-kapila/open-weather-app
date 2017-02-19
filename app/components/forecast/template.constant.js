@@ -10,7 +10,7 @@
         'tableHeading': {
             'day': 'Day',
             'seaLevel': 'Sea Level(hPa)',
-            'weather': 'Weather',
+            'weather': 'Weather Forecast',
             'maxTemp': 'Max Temp(C)',
             'minTemp': 'Min Temp(C)'
         }
