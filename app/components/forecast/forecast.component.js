@@ -6,8 +6,7 @@
         templateUrl: 'components/forecast/forecast.html',
         controller: 'forecastCtrl',
         bindings: {
-            forecastList: '<',
-            goBackToHome: '&'
+            forecastList: '<'
         }
     });
 

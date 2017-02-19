@@ -1,18 +1,23 @@
 <div class="details-container">
     <div class="details-data-available-container" ng-if="$ctrl.isDataLoaded === true">
-        <header class="details-header">
-            <div class="details-city-name">
+        <header class="details-header clearfix">
+            <div class="details-city-name pull-left">
                 <h1>
                     {{$ctrl.cityName}}, {{$ctrl.countryCode}}
                 </h1>
+            </div>
+            <div class="details-go-back pull-right">
+                <button class="btn btn-primary" ng-click="$ctrl.goBackToHome()">
+                    <span class="glyphicon glyphicon-chevron-left back-icon"></span>
+                    {{$ctrl.template.goBack}}
+                </button>
             </div>
         </header>
         
         <main class="details-main">
             <div class="details-main-table-container">
                 <forecast 
-                    forecast-list="$ctrl.forecastList" 
-                    go-back-to-home="$ctrl.goBackToHome()">
+                    forecast-list="$ctrl.forecastList">
                 </forecast>
             </div>
         </main>

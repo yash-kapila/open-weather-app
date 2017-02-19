@@ -50,6 +50,10 @@ body {
     color: #FFFFFF;
 }
 
+.cities-container .cities-data .table-heading, .cities-container .cities-data .table-body tr {
+    cursor: pointer;
+}
+
 .cities-container .cities-data .table-heading, .cities-container .cities-data .table-body .middle {
     vertical-align: middle;
 }
@@ -68,7 +72,11 @@ body {
 
 .details-container .details-header {
     color: #FFFFFF;
-    margin-top: 10%;
+    margin-top: 8%;
+}
+
+.details-container .details-header .details-go-back {
+    margin-top: 2%;
 }
 
 .details-container .details-main {

@@ -7,6 +7,7 @@
     'use strict';
 
     angular.module('app').constant('DetailsTemplate', {
-        'loadingMessage': 'Loading Data'
+        'loadingMessage': 'Loading Data',
+        'goBack': 'Go Back'
     })
 })();

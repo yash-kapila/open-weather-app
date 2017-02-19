@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody class="table-body">
-                <tr ng-repeat="data in $ctrl.weatherData">
+                <tr ng-repeat="data in $ctrl.weatherData" ng-click="$ctrl.viewSeaLevelDetails(data)">
                     <td class="table-city-name-container text-center middle">
                         <span class="city-name"> {{data.name}}, {{data.sys.country}} </span>
                     </td>
@@ -26,10 +26,7 @@
                         <span class="sunset"> {{data.sys.sunset}} </span>
                     </td>
                     <td class="table-next-icon-container text-center middle">
-                        <span 
-                            class="glyphicon glyphicon-chevron-right next-icon" 
-                            ng-click="$ctrl.viewSeaLevelDetails(data)">
-                        </span>
+                        <span class="glyphicon glyphicon-chevron-right next-icon"></span>
                     </td>
                 </tr>
             </tbody>

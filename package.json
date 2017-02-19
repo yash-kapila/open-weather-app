@@ -10,10 +10,21 @@
   "author": "Yash Kapila",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.6.1",
     "express": "^4.14.1",
     "express-http-proxy": "^0.11.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "http-proxy": "^1.16.2"
+    "http-proxy": "^1.16.2",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-html-reporter": "^0.2.7",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-read-json": "^1.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1"
   }
 }

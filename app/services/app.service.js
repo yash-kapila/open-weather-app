@@ -20,7 +20,6 @@
                 dateList[i].dt = $filter('date')(date, 'HH', 'GMT');
                 dateList[i].dt_txt = $filter('date')(date, 'longDate', 'GMT');
             };
-
             return dateList;
         };
 
