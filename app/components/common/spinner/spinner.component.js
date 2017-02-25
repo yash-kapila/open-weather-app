@@ -22,16 +22,17 @@
 
         vm.$onInit = function () {
             vm.spinner = true;
-            spinnerService.showSpinner = vm.showSpinner.bind();
-            spinnerService.hideSpinner = vm.hideSpinner.bind();
+            spinnerService.showSpinner = showSpinner.bind(vm);
+            spinnerService.hideSpinner = hideSpinner.bind(vm);
         };
 
-        vm.showSpinner = function () {
-            vm.spinner = true;
-        }
+        function showSpinner () {
+            this.spinner = true;
+        };
 
-        vm.hideSpinner = function () { 
-            vm.spinner = false;
-        }
+        function hideSpinner () { 
+            this.spinner = false;
+        };
+
     };
 })();
